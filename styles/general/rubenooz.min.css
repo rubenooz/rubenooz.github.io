@@ -1071,16 +1071,12 @@ video {
     height: 1024px !important;
   }
 
-  .portrait\:rvz-w-\[768px\] {
-    width: 768px !important;
-  }
-
-  .portrait\:rvz-w-full {
-    width: 100% !important;
-  }
-
   .portrait\:rvz-w-11\/12 {
     width: 91.666667% !important;
+  }
+
+  .portrait\:rvz-w-\[768px\] {
+    width: 768px !important;
   }
 }
 
