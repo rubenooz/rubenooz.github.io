@@ -1078,6 +1078,10 @@ video {
   .portrait\:rvz-w-\[768px\] {
     width: 768px !important;
   }
+
+  .portrait\:rvz-w-8\/12 {
+    width: 66.666667% !important;
+  }
 }
 
 @media (orientation: landscape) {
