@@ -1078,6 +1078,10 @@ video {
   .portrait\:rvz-w-full {
     width: 100% !important;
   }
+
+  .portrait\:rvz-w-11\/12 {
+    width: 91.666667% !important;
+  }
 }
 
 @media (orientation: landscape) {
@@ -1090,11 +1094,11 @@ video {
     height: 1080px !important;
   }
 
-  .landscape\:rvz-w-\[1920px\] {
-    width: 1920px !important;
-  }
-
   .landscape\:rvz-w-3\/12 {
     width: 25% !important;
+  }
+
+  .landscape\:rvz-w-\[1920px\] {
+    width: 1920px !important;
   }
 }
