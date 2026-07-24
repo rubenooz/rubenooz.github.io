@@ -21,36 +21,88 @@
 		<meta name="twitter:description" content="A seasoned professional with over a decade of fervent dedication to the world of computers. My comprehensive exploration spans the entirety of computer science, from its foundational creation to the myriad possibilities it offers for innovation. Proficient in both computer assembly and application development, my preference lies in the realms of data science and software engineering. Bolstered by a mathematician’s mindset, I possess the ability to venture beyond conventional limits, exploring ideas in unique and unconventional ways.">
 		<meta name="twitter:image" content="https://rubenooz.github.io/assets/IMG_5763_1.png">
 		<meta name="theme-color" content="#04081b">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Rubik:wght@300..900&display=swap" rel="stylesheet">
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script>
-			tailwind.config = {
-				prefix: 'rvz-',
-				theme: {
-					extend: {
-						fontFamily: {
-							montserrat: ["Montserrat", "sans-serif"],
-							rubik: ["Rubik", "sans-serif"],
-						},
-					},
-				},
-			};
-		</script>
-		<link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+		<link href="./styles/general/rubenooz.min.css?v=3.0.0" rel="stylesheet" type="text/css">
+		<script src="./scripts/general/rubenooz.min.js?v=3.0.0" defer></script>
 	</head>
-	<body class="rvz-bg-black">
-		<div id="app" class="rvz-grid rvz-items-center rvz-justify-center rvz-w-screen rvz-h-screen">
-			<div class="rvz-text-center">
-				<h1 class="rvz-font-rubik rvz-text-white rvz-text-6xl">Rubén Osorio</h1>
-				<h2 class="rvz-font-rubik rvz-text-white rvz-text-4xl">Software <span class="rvz-text-color2">Engineer</span></h2>
+	<body class="rvz-bg-gray-50">
+		<div id="app" class="rvz-bg-color1">
+			<div :class="{ 'vue-load': isMounted }">
+				<div id="rvz_container" class="rvz-relative">
+					<div data-anchor="intro" id="intro" class="page rvz-bg-color1 rvz-transition-colors">
+						<div class="rvz-w-screen rvz-h-screen rvz-relative rvz-z-[1] rvz-overflow-hidden">
+							<div class="rvz-flex rvz-flex-col rvz-justify-center rvz-items-center rvz-w-full rvz-h-full">
+								<resizable-section :is-resizing="isResizing" class="rvz-group/orientation landscape:rvz-w-[1920px] landscape:rvz-h-[1080px] portrait:rvz-w-[768px] portrait:rvz-h-[1024px]">
+									<div class="rvz-relative rvz-flex rvz-flex-col rvz-items-center rvz-justify-center landscape:rvz-w-[1920px] landscape:rvz-h-[1080px] portrait:rvz-w-[768px] portrait:rvz-h-[1024px]">
+										<div class="rvz-flex rvz-justify-center rvz-items-center rvz-mb-10">
+											<div class="rvz-w-[150px] rvz-h-[150px]">
+												<img class="rvz-object-cover rvz-w-[150px] rvz-h-[150px] rvz-rounded-full rvz-bg-color3" src="./assets/IMG_5763_1.png" alt="Rubén Osorio">
+											</div>
+										</div>
+										<div class="rvz-text-center">
+											<displayer-text>
+												<template v-slot:spanish>
+													<h1 class="rvz-font-rubik rvz-text-color3 rvz-text-6xl">Rubén Osorio</h1>
+												</template>
+												<template v-slot:english>
+													<h1 class="rvz-font-rubik rvz-text-color3 rvz-text-6xl">Rubén Osorio</h1>
+												</template>
+											</displayer-text>
+											<displayer-text>
+												<template v-slot:spanish>
+													<h2 class="rvz-font-rubik rvz-text-color3 rvz-text-4xl"><span class="rvz-text-color2">Ingeniero</span> de Software</h2>
+												</template>
+												<template v-slot:english>
+													<h2 class="rvz-font-rubik rvz-text-color3 rvz-text-4xl">Software <span class="rvz-text-color2">Engineer</span></h2>
+												</template>
+											</displayer-text>
+											<div class="rvz-flex rvz-gap-4 rvz-justify-center rvz-mt-8">
+												<button @click="setEnglishLenguage">
+													<displayer-text>
+														<template v-slot:spanish>
+															<p class="rvz-font-poppins rvz-text-color3 rvz-text-base">Inglés</p>
+														</template>
+														<template v-slot:english>
+															<p class="rvz-font-poppins rvz-text-color3 rvz-text-base rvz-border-b-2 rvz-border-color2">English</p>
+														</template>
+													</displayer-text>
+												</button>
+												<span class="rvz-text-color3">|</span>
+												<button @click="setSpanishLenguage">
+													<displayer-text>
+														<template v-slot:spanish>
+															<p class="rvz-font-poppins rvz-text-color3 rvz-text-base rvz-border-b-2 rvz-border-color2">Español</p>
+														</template>
+														<template v-slot:english>
+															<p class="rvz-font-poppins rvz-text-color3 rvz-text-base">Spanish</p>
+														</template>
+													</displayer-text>
+												</button>
+											</div>
+										</div>
+										<div class="rvz-absolute rvz-bottom-0 rvz-mb-10">
+											<a class="rvz-animate-bounce rvz-block" href="#about-me">
+												<displayer-text>
+													<template v-slot:spanish>
+														<p class="rvz-font-poppins rvz-text-color3 rvz-text-base">Continuar</p>
+													</template>
+													<template v-slot:english>
+														<p class="rvz-font-poppins rvz-text-color3 rvz-text-base">Continue</p>
+													</template>
+												</displayer-text>
+											</a>
+										</div>
+									</div>
+								</resizable-section>
+							</div>
+						</div>
+					</div>
+					<div class="rvz-relative rvz-w-full rvz-h-full rvz-z-0">
+						<displayer-dusts class="rvz-fixed rvz-z-0 rvz-top-0 rvz-left-0" :dust-size="40" :dust-opacity="5" :dust-quantity="50" :dust-velocity="1"></displayer-dusts>
+						<displayer-dusts class="rvz-fixed rvz-z-0 rvz-top-0 rvz-left-0" :dust-size="40" :dust-opacity="12" :dust-quantity="150" :dust-velocity="2"></displayer-dusts>
+						<displayer-dusts class="rvz-fixed rvz-z-0 rvz-top-0 rvz-left-0" :dust-size="10" :dust-opacity="20" :dust-quantity="50" :dust-velocity="4"></displayer-dusts>
+					</div>
+				</div>
 			</div>
-			<displayer-dusts class="rvz-fixed rvz-z-0 rvz-top-0 rvz-left-0" :dust-size="40" :dust-opacity="5" :dust-quantity="50" :dust-velocity="1"></displayer-dusts>
-			<displayer-dusts class="rvz-fixed rvz-z-0 rvz-top-0 rvz-left-0" :dust-size="40" :dust-opacity="12" :dust-quantity="150" :dust-velocity="2"></displayer-dusts>
-			<displayer-dusts class="rvz-fixed rvz-z-0 rvz-top-0 rvz-left-0" :dust-size="10" :dust-opacity="20" :dust-quantity="50" :dust-velocity="4"></displayer-dusts>
 		</div>
-		<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-		<script src="./assets/js/script.js"></script>
 	</body>
 </html>

@@ -1,1 +1,12 @@
+node_modules
 .DS_store
+styles/general/rubeenvz.min.css
+scripts/general/rubeenvz.min.js
+package-lock.json
+package.json
+webpack
+tailwind
+postcss.config.js
+tailwind.config.js
+webpack.config.js
+assets/general
